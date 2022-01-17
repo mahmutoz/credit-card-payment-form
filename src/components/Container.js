@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from './Card';
 import Form from './Form';
 
 function Container() {
+  const [numbers, setNumbers] = useState('');
+
   return (
     <div className="container">
-      <Card />
-      <Form />
+      <Card numbers={numbers} />
+      <Form numbers={numbers} setNumbers={setNumbers} />
     </div>
   );
 }
