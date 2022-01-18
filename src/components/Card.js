@@ -2,7 +2,7 @@ import React from 'react';
 import chip from '../img/chip.svg';
 import PaymentIcon from 'react-payment-icons';
 
-function Card({ numbers }) {
+function Card({ numbers, name, date, cvv }) {
   return (
     <div className="card">
       <div className="front">
@@ -19,6 +19,10 @@ function Card({ numbers }) {
           </figure>
         </header>
         <div className="card-body">{numbers}</div>
+        <div className="card-bottom">
+          <div className="card-holder">{name}</div>
+          <div className="card-date">{date}</div>
+        </div>
       </div>
       <div className="back">arka</div>
     </div>

@@ -65,4 +65,11 @@ form {
   margin-top: -5rem;
   padding-top: 8rem;
   border: 1px solid;
+  border-radius: 1rem;
+}
+
+.card-body {
+  padding: 1rem 1.2rem;
+  font-size: 1.8rem;
+  font-family: monospace;
 }
