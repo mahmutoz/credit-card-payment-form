@@ -3,21 +3,24 @@ import Card from './Card';
 import Form from './Form';
 
 function Container() {
-  const [numbers, setNumbers] = useState('');
-  const [name, setName] = useState('');
-  const [date, setDate] = useState('');
-  const [cvv, setCvv] = useState('');
+  const [numbers, setNumbers] = useState(null);
+  const [name, setName] = useState(null);
+  const [month, setMonth] = useState(null);
+  const [year, setYear] = useState(null);
+  const [cvv, setCvv] = useState(null);
 
   return (
     <div className="container">
-      <Card numbers={numbers} name={name} date={date} cvv={cvv} />
+      <Card numbers={numbers} name={name} month={month} year={year} cvv={cvv} />
       <Form
         numbers={numbers}
         setNumbers={setNumbers}
         name={name}
         setName={setName}
-        date={date}
-        setDate={setDate}
+        month={month}
+        setMonth={setMonth}
+        year={year}
+        setYear={setYear}
         cvv={cvv}
         setCvv={setCvv}
       />
