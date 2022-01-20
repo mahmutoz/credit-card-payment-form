@@ -13,6 +13,11 @@
   box-sizing: border-box;
 }
 
+::placeholder {
+  font-size: 1rem;
+  color: var(--secondary-color);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -76,10 +81,16 @@ body {
 .card-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 figure {
   margin: 0 0 1.5rem;
+}
+
+.left-icons {
+  display: flex;
+  align-items: center;
 }
 
 .subtitle {
@@ -97,13 +108,25 @@ figure {
 }
 
 .card-body .card-number {
+  display: flex;
+  align-items: center;
   color: #fff;
-  font-size: 2.3rem;
+  font-size: 2.2rem;
+  position: relative;
+}
+
+.card-number svg {
+  position: absolute;
+  transform: rotate(270deg);
+  right: -1.5rem;
+  width: 70px;
+  height: 70px;
+  fill: var(--secondary-color);
 }
 
 .card-bottom {
   display: flex;
-  height: 6.5rem;
+  height: 5rem;
   justify-content: space-between;
   align-items: flex-end;
   font-family: 'Roboto Mono', monospace;
@@ -154,9 +177,9 @@ figure {
   justify-content: space-between;
   align-items: center;
   color: #000;
-  width: 90%;
+  width: 85%;
   height: 2.4rem;
-  margin: 4rem 1rem;
+  margin: 5rem auto;
   background: #fff;
   position: relative;
 }
@@ -165,7 +188,7 @@ figure {
 .cvv-field::after {
   content: '';
   position: absolute;
-  width: 85%;
+  width: 90%;
   height: 4px;
   background-color: #eee;
   top: 0.7rem;
@@ -203,9 +226,9 @@ figure {
 **/
 
 form {
-  width: 36rem;
+  width: 38rem;
   height: 32rem;
-  margin-top: -7rem;
+  margin-top: -6rem;
   padding: 8rem 3rem;
   box-shadow: 0 5px 16px 6px rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
@@ -281,6 +304,17 @@ select:focus {
 
 #month {
   margin-right: 1rem;
+}
+
+.text-gray {
+  color: var(--secondary-color);
+  font-size: 1rem;
+  padding: 0.9rem 0.6rem;
+}
+
+option {
+  color: var(--text-color);
+  font-size: 1.3rem;
 }
 
 .cvv-input {

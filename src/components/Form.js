@@ -1,5 +1,9 @@
 import React from 'react';
 import NumberFormat from 'react-number-format';
+import creditCardType, {
+  getTypeInfo,
+  types as CardType,
+} from 'credit-card-type';
 
 function Form({
   numbers,
@@ -14,7 +18,15 @@ function Form({
   setCvv,
   flip,
   setFlip,
+  cardType,
+  setCardType,
 }) {
+  const creditType = creditCardType(numbers).filter(function (card) {
+    return card;
+  });
+
+  console.log('Type:', cardType);
+
   const getMonths = (months) => {
     let content = [];
     for (let i = 1; i <= months; i++) {
@@ -45,16 +57,21 @@ function Form({
         <label htmlFor="number">Card Number</label>
         <NumberFormat
           id="number"
+          placeholder="1234 5678 9012 3456"
           format="#### #### #### ####"
           mask="*"
           inputMode="numeric"
-          onChange={(e) => setNumbers(e.target.value)}
+          onChange={(e) => {
+            setNumbers(e.target.value);
+            setCardType(creditType);
+          }}
         />
       </div>
       <div className="holder-name-input">
         <label htmlFor="holder-name">Holder Name</label>
         <input
           id="holder-name"
+          placeholder="John Doe"
           type="text"
           onChange={(e) => setName(e.target.value)}
           minLength="6"
@@ -70,6 +87,7 @@ function Form({
               defaultValue="Month"
               id="month"
               onChange={(e) => setMonth(e.target.value)}
+              className={month === null ? 'text-gray' : ''}
             >
               <option value="Month" disabled>
                 Month
@@ -78,8 +96,8 @@ function Form({
             </select>
             <select
               defaultValue="Year"
-              id=""
               onChange={(e) => setYear(e.target.value)}
+              className={year === null ? 'text-gray' : ''}
             >
               <option value="Year" disabled>
                 Year
@@ -89,11 +107,12 @@ function Form({
           </div>
         </div>
         <div className="cvv-input">
-          <label htmlFor="cvv">CVV</label>
+          <label htmlFor="cvv">{cardType?.[0]?.code?.name || 'CVV'}</label>
           <NumberFormat
             id="cvv"
+            placeholder="123"
             autoComplete="off"
-            format="####"
+            format={cardType?.[0]?.code?.size === 4 ? '####' : '###'}
             mask="*"
             inputMode="numeric"
             onChange={(e) => setCvv(e.target.value)}

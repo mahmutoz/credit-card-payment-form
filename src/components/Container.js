@@ -9,6 +9,7 @@ function Container() {
   const [year, setYear] = useState(null);
   const [cvv, setCvv] = useState(null);
   const [flip, setFlip] = useState(false);
+  const [cardType, setCardType] = useState(null);
 
   return (
     <div className="container">
@@ -19,6 +20,7 @@ function Container() {
         year={year}
         cvv={cvv}
         flip={flip}
+        cardType={cardType}
       />
       <Form
         numbers={numbers}
@@ -33,6 +35,8 @@ function Container() {
         setCvv={setCvv}
         flip={flip}
         setFlip={setFlip}
+        cardType={cardType}
+        setCardType={setCardType}
       />
     </div>
   );
