@@ -12,6 +12,8 @@ function Form({
   setYear,
   cvv,
   setCvv,
+  flip,
+  setFlip,
 }) {
   if (numbers) {
   }
@@ -99,6 +101,9 @@ function Form({
             maxLength="4"
             minLength="3"
             autoComplete="off"
+            onChange={(e) => setCvv(e.target.value)}
+            onFocus={() => setFlip(true)}
+            onBlur={() => setFlip(false)}
           />
         </div>
       </div>

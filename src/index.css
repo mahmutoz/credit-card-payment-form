@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
 :root {
   --primary-color: #bfa2db;
   --text-color: #444;
@@ -48,18 +50,19 @@ body {
   color: #fff;
   backface-visibility: hidden;
   transition: 1s all;
-  padding: 1rem;
 }
 
 .back {
   transform: rotateY(180deg);
 }
 
-.card:hover .back {
+.card:hover .back,
+.card.flip .back {
   transform: rotateY(0);
 }
 
-.card:hover .front {
+.card:hover .front,
+.card.flip .front {
   transform: rotateY(-180deg);
 }
 
@@ -68,12 +71,86 @@ header {
   justify-content: space-between;
 }
 
-.card-body {
+.subtitle {
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.card-body,
+.card-holder,
+.card-date {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body .card-number {
   color: #fff;
-  padding: 1rem 1.2rem;
   font-size: 1.8rem;
   font-family: monospace;
 }
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.strip {
+  width: 100%;
+  height: 3rem;
+  margin-top: 2rem;
+  background: #000;
+}
+
+.cvv-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000;
+  width: 90%;
+  height: 2.4rem;
+  margin: 4rem 1rem;
+  background: #fff;
+  position: relative;
+}
+
+.cvv-field::before,
+.cvv-field::after {
+  content: '';
+  position: absolute;
+  width: 85%;
+  height: 4px;
+  background-color: #eee;
+  top: 0.7rem;
+  left: 0;
+}
+
+.cvv-field::after {
+  top: 1.5rem;
+}
+
+.signature {
+  font-family: 'Sacramento', cursive;
+  font-size: 1.6rem;
+  padding: 0.5rem 1rem 0;
+  text-transform: lowercase;
+  z-index: 2;
+}
+
+.cvv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 2.4rem;
+  background: #ccc;
+  font-size: 1.1rem;
+  font-style: italic;
+  z-index: 1;
+}
+
+/**
+  FORM 
+**/
 
 form {
   width: 32rem;
@@ -115,8 +192,8 @@ select {
 
 select {
   width: 40%;
-  height: 103%;
-  font-weight: 500;
+  height: 102%;
+  font-weight: 600;
   cursor: pointer;
   appearance: none;
   position: relative;
@@ -138,6 +215,7 @@ select:hover {
 input:focus,
 select:focus {
   outline: none;
+  border: 2px solid var(--primary-color);
 }
 
 .number-input,
