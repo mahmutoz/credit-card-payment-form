@@ -1,5 +1,5 @@
 import React from 'react';
-import InputMask from 'react-input-mask';
+import NumberFormat from 'react-number-format';
 
 function Form({
   numbers,
@@ -15,8 +15,6 @@ function Form({
   flip,
   setFlip,
 }) {
-  if (numbers) {
-  }
   const getMonths = (months) => {
     let content = [];
     for (let i = 1; i <= months; i++) {
@@ -45,14 +43,13 @@ function Form({
     <form>
       <div className="number-input">
         <label htmlFor="number">Card Number</label>
-        <InputMask
+        <NumberFormat
           id="number"
-          className="card-number-input"
-          mask="9999 9999 9999 9999"
-          maskChar=" "
+          format="#### #### #### ####"
+          mask="*"
+          inputMode="numeric"
           onChange={(e) => setNumbers(e.target.value)}
-          inputMode="tel"
-        ></InputMask>
+        />
       </div>
       <div className="holder-name-input">
         <label htmlFor="holder-name">Holder Name</label>
@@ -61,7 +58,7 @@ function Form({
           type="text"
           onChange={(e) => setName(e.target.value)}
           minLength="6"
-          maxLength="20"
+          maxLength="18"
           autoComplete="off"
         />
       </div>
@@ -93,14 +90,12 @@ function Form({
         </div>
         <div className="cvv-input">
           <label htmlFor="cvv">CVV</label>
-          <input
-            type="text"
+          <NumberFormat
             id="cvv"
-            min="100"
-            max="9999"
-            maxLength="4"
-            minLength="3"
             autoComplete="off"
+            format="####"
+            mask="*"
+            inputMode="numeric"
             onChange={(e) => setCvv(e.target.value)}
             onFocus={() => setFlip(true)}
             onBlur={() => setFlip(false)}

@@ -7,7 +7,7 @@ function Card({ numbers, name, month, year, cvv, flip }) {
   return (
     <div className={flip ? 'card flip' : 'card'}>
       <div className="front">
-        <header>
+        <div className="card-top">
           <figure>
             <img src={chip} alt="chip" />
           </figure>
@@ -18,23 +18,28 @@ function Card({ numbers, name, month, year, cvv, flip }) {
               className="payment-icon"
             />
           </figure>
-        </header>
+        </div>
         <div className="card-body">
           <span className="subtitle">Card Number</span>
-          <span className="card-number">{numbers}</span>
+          <span className="card-number">
+            {numbers || '**** **** **** ****'}
+          </span>
         </div>
         <div className="card-bottom">
           <div className="card-holder">
             <span className="subtitle">Holder Name</span>
-            <span className="card-number">{name}</span>
+            <span className="card-holder-name">{name || '****** ****'}</span>
           </div>
           <div className="card-date">
             <span className="subtitle">Expiration Date</span>
-            <span>
+            <span className="date-field">
+              <span className="valid-thru">Valid Thru</span>
               <span>
-                {month === null ? '' : month?.toString()?.padEnd(3, '/')}
+                <span>
+                  {month === null ? 'mm/' : month?.toString()?.padEnd(3, '/')}
+                </span>
+                <span>{year?.substring(2, 4) || 'yy'}</span>
               </span>
-              <span>{year}</span>
             </span>
           </div>
         </div>
@@ -42,7 +47,7 @@ function Card({ numbers, name, month, year, cvv, flip }) {
       <div className="back">
         <div className="strip"></div>
         <div className="cvv-field">
-          <span className="signature">{name}</span>
+          <span className="signature">{name || 'Mahmut ÖZ'}</span>
           <span className="cvv">{cvv}</span>
         </div>
       </div>
