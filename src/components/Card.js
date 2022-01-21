@@ -4,7 +4,6 @@ import wave from '../img/wave.svg';
 import PaymentIcon from 'react-payment-icons';
 
 function Card({ numbers, name, month, year, cvv, flip, cardType }) {
-  console.log('number', cardType?.[0]?.type);
   return (
     <div className={flip ? 'card flip' : 'card'}>
       <div className="front">
@@ -58,7 +57,7 @@ function Card({ numbers, name, month, year, cvv, flip, cardType }) {
       <div className="back">
         <div className="strip"></div>
         <div className="cvv-field">
-          <span className="signature">{name || 'Mahmut ÖZ'}</span>
+          <span className="signature">{name || 'john Doe'}</span>
           <span className="cvv">{cvv}</span>
         </div>
       </div>

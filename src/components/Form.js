@@ -8,15 +8,12 @@ import creditCardType, {
 function Form({
   numbers,
   setNumbers,
-  name,
   setName,
   month,
   setMonth,
   year,
   setYear,
-  cvv,
   setCvv,
-  flip,
   setFlip,
   cardType,
   setCardType,
@@ -24,8 +21,6 @@ function Form({
   const creditType = creditCardType(numbers).filter(function (card) {
     return card;
   });
-
-  console.log('Type:', cardType);
 
   const getMonths = (months) => {
     let content = [];
@@ -71,7 +66,7 @@ function Form({
         <label htmlFor="holder-name">Holder Name</label>
         <input
           id="holder-name"
-          placeholder="John Doe"
+          placeholder="Your Name"
           type="text"
           onChange={(e) => setName(e.target.value)}
           minLength="6"

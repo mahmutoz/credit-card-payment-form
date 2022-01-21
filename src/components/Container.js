@@ -25,15 +25,12 @@ function Container() {
       <Form
         numbers={numbers}
         setNumbers={setNumbers}
-        name={name}
         setName={setName}
         month={month}
         setMonth={setMonth}
         year={year}
         setYear={setYear}
-        cvv={cvv}
         setCvv={setCvv}
-        flip={flip}
         setFlip={setFlip}
         cardType={cardType}
         setCardType={setCardType}
