@@ -2,9 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap');
 
 :root {
-  --primary-color: #dab6fc;
-  --secondary-color: #dcdcdc;
+  --primary-color: #2fdd92;
+  --secondary-color: #aaa;
   --background-color: #010101;
+  --border-color: #bdd2b6;
   --text-color: #555;
 }
 
@@ -16,6 +17,7 @@
 
 ::placeholder {
   font-size: 1rem;
+  font-weight: 400;
   color: var(--secondary-color);
 }
 
@@ -27,7 +29,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(90deg, #f0d9ff 0%, #d9d7f1 50%, #c1b2d0 100%);
+  background: -webkit-linear-gradient(to right, #11998e, #38ef7d);
+  background: linear-gradient(to right, #11998e, #38ef7d);
 }
 
 .container {
@@ -179,7 +182,7 @@ figure {
   width: 100%;
   height: 3rem;
   margin-top: 2rem;
-  background: var(--secondary-color);
+  background: #fff;
 }
 
 .cvv-field {
@@ -237,7 +240,7 @@ figure {
 
 form {
   width: 38rem;
-  height: 32rem;
+  height: 36rem;
   margin-top: -6rem;
   padding: 8rem 3rem;
   box-shadow: 0 5px 16px 6px rgba(0, 0, 0, 0.1);
@@ -264,8 +267,7 @@ select {
   font-size: 1.5rem;
   font-weight: 600;
   padding: 0.6rem;
-  border: none;
-  border: 2px solid #ddd;
+  border: 2px solid var(--border-color);
   border-radius: 0.3rem;
   color: var(--text-color);
   caret-color: var(--primary-color);
@@ -279,8 +281,9 @@ select {
   cursor: pointer;
   appearance: none;
   position: relative;
-  background: url("data:image/svg+xml;utf8,<svg fill='rebeccapurple' height='32' width='32' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>")
+  background: url("data:image/svg+xml;utf8,<svg fill='gray' height='32' width='32' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>")
     no-repeat 97%;
+  background-size: 2.2rem;
 }
 
 .select-group {
@@ -305,7 +308,7 @@ select:focus {
 .date-input {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .date-input {
@@ -319,6 +322,7 @@ select:focus {
 .text-gray {
   color: var(--secondary-color);
   font-size: 1rem;
+  font-weight: 500;
   padding: 0.9rem 0.6rem;
 }
 
@@ -362,7 +366,7 @@ button:hover {
   }
 
   form {
-    width: 33rem;
-    padding: 8rem 1.5rem;
+    width: 34rem;
+    padding: 8rem 2rem;
   }
 }
