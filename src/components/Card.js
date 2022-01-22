@@ -15,7 +15,6 @@ function Card({ numbers, name, month, year, cvv, flip, cardType }) {
           <figure>
             <PaymentIcon
               id={cardType?.[0]?.type.split('-')[0] || 'visa'}
-              style={{ width: 70 }}
               className="payment-icon"
             />
           </figure>

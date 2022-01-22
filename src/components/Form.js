@@ -1,9 +1,6 @@
 import React from 'react';
 import NumberFormat from 'react-number-format';
-import creditCardType, {
-  getTypeInfo,
-  types as CardType,
-} from 'credit-card-type';
+import creditCardType from 'credit-card-type';
 
 function Form({
   numbers,

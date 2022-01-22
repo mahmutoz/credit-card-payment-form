@@ -36,8 +36,7 @@ body {
   align-items: center;
   min-height: 100vh;
   position: relative;
-  padding-top: 5rem;
-  box-sizing: border-box;
+  padding: 3rem;
 }
 
 .card {
@@ -96,6 +95,14 @@ figure {
   align-items: center;
 }
 
+.left-icons img {
+  width: 4rem;
+}
+
+.payment-icon {
+  width: 5rem;
+}
+
 .subtitle {
   font-size: 0.8rem;
   font-weight: 500;
@@ -114,7 +121,7 @@ figure {
   display: flex;
   align-items: center;
   color: #fff;
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   position: relative;
 }
 
@@ -122,8 +129,8 @@ figure {
   position: absolute;
   transform: rotate(270deg);
   right: -1.5rem;
-  width: 70px;
-  height: 70px;
+  width: 5rem;
+  height: 5rem;
   fill: var(--secondary-color);
 }
 
@@ -343,4 +350,19 @@ button {
 
 button:hover {
   opacity: 0.9;
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    font-size: 10px;
+  }
+
+  .card {
+    width: 30rem;
+  }
+
+  form {
+    width: 33rem;
+    padding: 8rem 1.5rem;
+  }
 }
