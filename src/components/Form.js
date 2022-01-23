@@ -1,6 +1,7 @@
 import React from 'react';
 import NumberFormat from 'react-number-format';
 import creditCardType from 'credit-card-type';
+import PaymentIcon from 'react-payment-icons';
 
 function Form({
   numbers,
@@ -57,6 +58,10 @@ function Form({
             setNumbers(e.target.value);
             setCardType(creditType);
           }}
+        />
+        <PaymentIcon
+          id={cardType?.[0]?.type.split('-')[0] || 'visa'}
+          className="payment-icon"
         />
       </div>
       <div className="holder-name-input">

@@ -309,6 +309,25 @@ select:focus {
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
+  position: relative;
+}
+
+.number-input > .payment-icon {
+  position: absolute;
+  width: 3rem;
+  right: 0.7rem;
+  bottom: 0.7rem;
+  filter: grayscale(1);
+}
+
+.number-input ::after {
+  content: '';
+  position: absolute;
+  height: 1.2rem;
+  width: 1px;
+  background: var(--border-color);
+  top: 2.4rem;
+  right: 4.2rem;
 }
 
 .date-input {
